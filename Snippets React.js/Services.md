@@ -62,13 +62,7 @@ export const postSomething = async (payload: type) => { // o più param
             headers: {
                 'Content-Type': 'application/json', // o altro se necessario
             },
-            body: {
-                `{
-                  "key": payload.value,
-                  "key": payload.value,
-                  ...
-                 }`
-            }
+            body: JSON.stringify(payload),            }
         });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
