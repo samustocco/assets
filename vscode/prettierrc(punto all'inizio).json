@@ -15,9 +15,12 @@
       "options": {
         "tabWidth": 2
       }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "tabWidth": 2
+      }
     }
-  ],
-  "plugins": [
-    "prettier-plugin-tailwindcss"
   ]
 }
