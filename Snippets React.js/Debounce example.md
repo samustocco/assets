@@ -10,6 +10,18 @@ const debounce = (fn, delay) => {
 }
 ```
 
+Con tipizzazione:
+
+```ts
+export const debounce = <T extends any[]>(fn: (...args: T) => void, delay: number) => {
+	let timeoutId: ReturnType<typeof setTimeout>;
+	return (...args: T) => {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => fn(...args), delay);
+	}
+}
+```
+
 Utilizzo in un input:
 
 ```tsx
